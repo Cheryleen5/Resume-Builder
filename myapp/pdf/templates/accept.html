@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>Document</title>
+        {% load static %}
+        
+    </head>
+    <style>
+        section{
+            min-height: 500px;
+            padding: 45px 30px;
+        }
+        .inner {
+            max-width: 1300px;
+            margin: auto;
+        }
+        section.first{
+            background-color: #00bfff
+        }
+        section.first p{
+            color:#fff
+        }
+        .separator{
+            width: 0;
+            height: 0;
+            border-right: 100vw solid transparent;
+            border-bottom: 7.9vw solid #fff;
+            margin-top: -6.9vw;
+        }
+        
+        hr.new1 {
+            border-top: 6px solid black;
+        }
+        
+        .form-group{
+            font-size: 24px;
+            font-weight: 500;
+        }
+        
+        .form-control{
+            background-color: #ffffff;
+            color: #000000;
+            font-weight: bold;
+            padding: 1em;
+            border-radius: 10px;
+            border: 2px solid #007FFF;
+            outline: none;
+            font-family: "Heebo", sans-serif;
+            font-size: 16px;
+            line-height: 1.4;
+            width: 600px;
+            height: 50px;
+            transition: all 0.2s;
+          }
+          
+          .textarea:hover {
+            cursor: pointer;
+            background-color: #eeeeee;
+          }
+          
+          .textarea:focus {
+            cursor: text;
+            color: #333333;
+            background-color: white;
+            border-color: #333333;
+          }
+          
+        
+        .button {
+          display: inline-block;
+          border-radius: 4px;
+          background-color: #1e90ff;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 28px;
+          padding: 20px;
+          width: 200px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 5px;
+        }
+        
+        .button span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+        
+        .button span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+        
+        .button:hover span {
+          padding-right: 25px;
+        }
+        
+        .button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+        
+        .h1{
+            font-size: 70px;
+        }
+        
+        .h4{
+            color: #ffffff;
+        }
+    </style>    
+    <body>
+        <div class="container">
+            <section class="first">
+                <div class="inner">
+                    <div class = "row m-5">
+                        <div class="col-md-12">
+                            <h1 class="h1"><b>CV Generator</b></h1>
+                            <hr class="new1">
+                        </div>
+                    </div>
+                    <div class="row m-5">
+                        <div class="col-md-12">
+                            <h2>Get hired with ultimate resume builders & stand out with professional custom resumes.</h2> 
+                            <h4 class="h4"><i>Let your qualifications shine with an exceptional CV, designed with ease and made to stand out from the crowd.</i></h4>
+                            <br>
+                            <h3>DOWNLOAD it for <b>FREE</b>!</h3>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="separator"></div>
+
+            <section class="second">
+                <div class="inner">
+                    <div class="row m-0 ">
+                        <div class="col-md-12">
+                            <h3><b>Please fill out your details</b></h3>
+                        </div>
+                    </div>
+                    <div class="row m-5">
+                        <div class="col-md-7">
+                            <form method="POST">{% csrf_token %}
+                                <div class="form-group">
+                                    <label for="">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email id">
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Phone</label>
+                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">About You</label>
+                                    <textarea class="form-control" id="about_you" name="about_you" placeholder="Write something about you"></textarea>
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Degree</label>
+                                    <input type="text" class="form-control" id="degree" name="degree" placeholder="Enter your degree">
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">School</label>
+                                    <input type="text" class="form-control" id="school" name="school" placeholder="Enter your school details">
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">University</label>
+                                    <input type="text" class="form-control" id="university" name="university" placeholder="Enter your university details">
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Previous Work</label>
+                                    <textarea class="form-control" id="previous_work" name="previous_work" textarea placeholder="Enter your previous work experience"></textarea>
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Skill</label>
+                                    <textarea class="form-control" id="skill" name="skill" placeholder="Enter your skills"></textarea>
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Projects</label>
+                                    <textarea class="form-control" id="project" name="project" placeholder="Enter your projects"></textarea>
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Certifications</label>
+                                    <textarea class="form-control" id="certificate" name="certificate" placeholder="Enter your achieved certificates"></textarea>
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Language</label>
+                                    <textarea class="form-control" id="langauge" name="language" placeholder="Enter languages you are fluent in"></textarea>
+                                    <br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Hobby</label>
+                                    <textarea class="form-control" id="hobby" name="hobby" placeholder="Enter your hobbies"></textarea>
+                                    <br>
+                                </div>
+                            <button class="button" style="vertical-align:middle"><span>Submit </span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
